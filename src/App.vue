@@ -1,31 +1,35 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <router-view></router-view>
   </div>
 </template>
 
+<script>
+import "@fortawesome/fontawesome-free/css/fontawesome.css";
+import "@fortawesome/fontawesome-free/css/all.css";
+import WebFont from "webfontloader";
+
+export default {
+  name: "app",
+
+  created() {
+    WebFont.load({
+      custom: {
+        families: ["KoPub Dotum"],
+        urls: ["//cdn.jsdelivr.net/font-kopub/1.0/kopubdotum.css"]
+      }
+    });
+  }
+};
+</script>
+
 <style>
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+  font-family: "KoPub Dotum", sans-serif;
+  color: #000;
+  background-color: #0043ca;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 </style>
